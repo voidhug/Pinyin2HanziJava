@@ -1,5 +1,7 @@
 package com.ztc.pinyinSyncopate;
 
+import java.util.Arrays;
+
 public class TrieTree {
     private TrieNode root;
 
@@ -33,7 +35,7 @@ public class TrieTree {
         }
     }
 
-    public int searchFre(String word) {
+    public int find(String word) {
         int fre = -1;
         TrieNode node = root;
         char[] words = word.toCharArray();
@@ -49,22 +51,18 @@ public class TrieTree {
         return fre;
     }
 
-    public String splitSpell(String spell) {
+    public boolean findInitialWith(String prefixWord) {
         TrieNode node = root;
-        char[] letters = spell.toCharArray();
-        String spells = "";
-        for (int i = 0; i < letters.length; i++) {
-            if (node.getChildrens().containsKey(letters[i] + "")) {
-                spells += letters[i];
-                node = node.getChildrens().get(letters[i] + "");
-                System.out.println(spells);
-            } else {
-                node = root;
-                spells += " ";
-                i--;
+        char[] words = prefixWord.toCharArray();
+        for (int i = 0 ; i < words.length; i++) {
+            if (!node.getChildrens().containsKey(words[i] + "")) {
+                return false;
             }
+            node = node.getChildrens().get(words[i] + "");
         }
-
-        return spells;
+        if (node == null) {
+            return false;
+        }
+        return true;
     }
 }
