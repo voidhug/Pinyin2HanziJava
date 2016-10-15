@@ -1,9 +1,7 @@
-package com.huilian.pinyin2hanzi;
+package com.ztc.pinyin2hanzi;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
 
 public class Viterbi {
     public static void viterbi(InterfaceHmmParams hmmParams, ArrayList<String> observations, int pathNum, boolean isLog) {

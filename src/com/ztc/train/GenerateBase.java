@@ -1,9 +1,9 @@
-package com.huilian.train;
+package com.ztc.train;
 
-import com.huilian.Utils;
-import com.huilian.hanzi2pinyin.PinyinException;
-import com.huilian.hanzi2pinyin.PinyinFormat;
-import com.huilian.hanzi2pinyin.PinyinHelper;
+import com.ztc.Utils;
+import com.ztc.hanzi2pinyin.PinyinException;
+import com.ztc.hanzi2pinyin.PinyinFormat;
+import com.ztc.hanzi2pinyin.PinyinHelper;
 
 import java.io.*;
 import java.util.HashMap;

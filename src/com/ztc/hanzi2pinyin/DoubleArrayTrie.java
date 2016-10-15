@@ -13,7 +13,7 @@
  * License (the "BSD").
  * </p>
  */
-package com.huilian.hanzi2pinyin;
+package com.ztc.hanzi2pinyin;
 
 import java.io.*;
 import java.util.ArrayList;

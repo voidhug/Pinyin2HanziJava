@@ -1,6 +1,4 @@
-package com.huilian.hanzi2pinyin;
-
-import com.huilian.Utils;
+package com.ztc.hanzi2pinyin;
 
 import java.io.*;
 import java.util.Map;
@@ -51,14 +49,14 @@ public final class PinyinResource {
     }
 
     protected static Map<String, String> getPinyinResource() {
-        return getResource(newClassPathReader("/com/huilian/hanzi2pinyin_data/pinyin.dict"));
+        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin_data/pinyin.dict"));
     }
 
     protected static Map<String, String> getMutilPinyinResource() {
-        return getResource(newClassPathReader("/com/huilian/hanzi2pinyin_data/mutil_pinyin.dict"));
+        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin_data/mutil_pinyin.dict"));
     }
 
     protected static Map<String, String> getChineseResource() {
-        return getResource(newClassPathReader("/com/huilian/hanzi2pinyin_data/chinese.dict"));
+        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin_data/chinese.dict"));
     }
 }

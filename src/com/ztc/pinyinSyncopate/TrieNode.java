@@ -1,4 +1,4 @@
-package com.huilian.pinyinSyncopate;
+package com.ztc.pinyinSyncopate;
 
 import java.util.HashMap;
 import java.util.Map;

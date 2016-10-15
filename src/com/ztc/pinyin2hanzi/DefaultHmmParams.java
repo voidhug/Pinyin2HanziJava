@@ -1,6 +1,4 @@
-package com.huilian.pinyin2hanzi;
-
-import com.huilian.Utils;
+package com.ztc.pinyin2hanzi;
 
 import java.io.*;
 import java.util.ArrayList;

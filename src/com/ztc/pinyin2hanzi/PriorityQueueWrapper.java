@@ -1,4 +1,4 @@
-package com.huilian.pinyin2hanzi;
+package com.ztc.pinyin2hanzi;
 
 import java.util.ArrayList;
 import java.util.Comparator;

@@ -1,11 +1,9 @@
-package com.huilian.train;
+package com.ztc.train;
 
-import com.huilian.InvalidFormatException;
-import com.huilian.Utils;
-import com.huilian.hanzi2pinyin.DoubleArrayTrie;
+import com.ztc.InvalidFormatException;
+import com.ztc.Utils;
 
 import java.io.*;
-import java.nio.Buffer;
 import java.util.HashMap;
 import java.util.Map;
 

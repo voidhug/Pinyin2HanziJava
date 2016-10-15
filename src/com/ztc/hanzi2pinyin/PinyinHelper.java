@@ -1,9 +1,8 @@
-package com.huilian.hanzi2pinyin;
+package com.ztc.hanzi2pinyin;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 

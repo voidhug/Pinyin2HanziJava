@@ -1,6 +1,6 @@
-package com.huilian.pinyinSyncopate;
+package com.ztc.pinyinSyncopate;
 
-import com.huilian.Utils;
+import com.ztc.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

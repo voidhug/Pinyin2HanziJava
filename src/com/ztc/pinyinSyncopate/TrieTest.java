@@ -1,4 +1,4 @@
-package com.huilian.pinyinSyncopate;
+package com.ztc.pinyinSyncopate;
 
 public class TrieTest {
     public static void main(String[] args) {

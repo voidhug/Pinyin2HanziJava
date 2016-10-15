@@ -1,4 +1,4 @@
-package com.huilian.hanzi2pinyin;
+package com.ztc.hanzi2pinyin;
 
 /**
  * 拼音格式类
