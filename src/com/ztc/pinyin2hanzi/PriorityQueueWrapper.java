@@ -70,10 +70,10 @@ public class PriorityQueueWrapper {
             Item item1 = (Item) o1;
             Item item2 = (Item) o2;
             if (item1.getScore() > item2.getScore()) {
-                return -1;
+                return 1;
             }
             if (item1.getScore() < item2.getScore()) {
-                return 1;
+                return -1;
             }
             return 0;
         }

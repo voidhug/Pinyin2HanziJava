@@ -92,6 +92,7 @@ public class GenerateFinally {
             for (Map.Entry<String, Double> entry : start.entrySet()) {
                 start.put(entry.getKey(), entry.getValue() / count);
             }
+            start.put("default", 1 / count);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -176,6 +177,7 @@ public class GenerateFinally {
                 for (Map.Entry<String, Double> entry : hanzi2NumMap.entrySet()) {
                     hanzi2NumMap.put(entry.getKey(), (entry.getValue() + 1) / numSum);
                 }
+                hanzi2NumMap.put("default", 1 / numSum);
                 transition.put(hanzi1, hanzi2NumMap);
             }
         } catch (IOException e) {

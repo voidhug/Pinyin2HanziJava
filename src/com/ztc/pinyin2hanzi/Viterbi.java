@@ -1,10 +1,9 @@
 package com.ztc.pinyin2hanzi;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 public class Viterbi {
-    public static void viterbi(InterfaceHmmParams hmmParams, ArrayList<String> observations, int pathNum, boolean isLog) {
+    public static ArrayList<PriorityQueueWrapper.Item> compute(InterfaceHmmParams hmmParams, ArrayList<String> observations, int pathNum, boolean isLog) {
         double minProb = 3.14e-200;
         ArrayList<HashMap<String, PriorityQueueWrapper>> V = new ArrayList<HashMap<String, PriorityQueueWrapper>>();
         int t = 0;
@@ -69,14 +68,35 @@ public class Viterbi {
         }
 
         PriorityQueueWrapper priorityQueueWrapperResult = new PriorityQueueWrapper(pathNum);
-        for (String lastState : V.get(1).keySet()) {
-            for (PriorityQueueWrapper.Item item : V.get(1).get(lastState).getPriorityQueue()) {
+        if (observations.size() > 1) {
+            t = 1;
+        } else {
+            t = 0;
+        }
+        for (String lastState : V.get(t).keySet()) {
+            for (PriorityQueueWrapper.Item item : V.get(t).get(lastState).getPriorityQueue()) {
                 priorityQueueWrapperResult.put(item.getScore(), item.getPath());
             }
         }
 
+        ArrayList<PriorityQueueWrapper.Item> result = new ArrayList<PriorityQueueWrapper.Item>();
         for (PriorityQueueWrapper.Item item : priorityQueueWrapperResult.getPriorityQueue()) {
-            System.out.println(item.getPath());
+           result.add(item);
         }
+
+        Collections.sort(result, new Comparator<PriorityQueueWrapper.Item>() {
+            @Override
+            public int compare(PriorityQueueWrapper.Item o1, PriorityQueueWrapper.Item o2) {
+                if (o1.getScore() > o2.getScore()) {
+                    return -1;
+                }
+                if (o1.getScore() < o2.getScore()) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
+
+        return result;
     }
 }

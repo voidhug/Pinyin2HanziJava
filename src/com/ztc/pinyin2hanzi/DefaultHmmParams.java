@@ -13,6 +13,8 @@ public class DefaultHmmParams implements InterfaceHmmParams {
     private HashMap<String, HashMap<String, Double>> emission = new HashMap<String, HashMap<String, Double>>();
     // {"你": {"好" : 10, "们" : 2}}
     private HashMap<String, HashMap<String, Double>> transition = new HashMap<String, HashMap<String, Double>>();
+    private static final Double HANZI_NUM  = 20903.;
+
 
     private static final String FINAL_PINYIN2HANZI_FILE = "./res/output/data/hmm_pinyin2hanzi.txt";
     private static final String FINAL_START_FILE = "./res/output/data/hmm_start.txt";
@@ -165,7 +167,7 @@ public class DefaultHmmParams implements InterfaceHmmParams {
     @Override
     public Double start(String state) {
         if (start.get(state) == null) {
-            return 3.3108977785289716e-09;
+            return start.get("default");
         }
         return start.get(state);
     }
@@ -173,7 +175,7 @@ public class DefaultHmmParams implements InterfaceHmmParams {
     @Override
     public Double emission(String state, String observation) {
         if (emission.get(state).get(observation) == null) {
-            return 3.3108977785289716e-09;
+            return 1e-200;
         }
         return emission.get(state).get(observation);
     }
@@ -181,10 +183,10 @@ public class DefaultHmmParams implements InterfaceHmmParams {
     @Override
     public Double transition(String state1, String state2) {
         if (transition.get(state1) == null) {
-            return 3.3108977785289716e-09;
+            return 1 / HANZI_NUM;
         }
         if (transition.get(state1).get(state2) == null) {
-            return 3.3108977785289716e-09;
+            return transition.get(state1).get("default");
         }
         return transition.get(state1).get(state2);
     }
@@ -202,10 +204,11 @@ public class DefaultHmmParams implements InterfaceHmmParams {
     public static void main(String[] args) {
         DefaultHmmParams hmmParams = new DefaultHmmParams();
         ArrayList<String> observations = new ArrayList<String>();
-        observations.add("zhi");
-        observations.add("ye");
+        observations.add("mao");
+        observations.add("zhu");
+        observations.add("xi");
         observations.add("wan");
-        observations.add("jia");
-        Viterbi.viterbi(hmmParams, observations, 3, false);
+        observations.add("sui");
+        Viterbi.compute(hmmParams, observations, 3, false);
     }
 }

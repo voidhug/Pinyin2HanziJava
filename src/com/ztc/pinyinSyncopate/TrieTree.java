@@ -57,6 +57,7 @@ public class TrieTree {
             if (node.getChildrens().containsKey(letters[i] + "")) {
                 spells += letters[i];
                 node = node.getChildrens().get(letters[i] + "");
+                System.out.println(spells);
             } else {
                 node = root;
                 spells += " ";

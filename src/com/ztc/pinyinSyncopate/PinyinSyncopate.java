@@ -12,8 +12,14 @@ public class PinyinSyncopate {
         initSpells();
     }
 
-    public static String splitSpell(String spell) {
-        return tree.splitSpell(spell);
+    public static ArrayList<String> splitSpell(String spell) {
+        String[] pinyinArrays = null;
+        pinyinArrays = tree.splitSpell(spell).split(" ");
+        ArrayList<String> pinyinList = new ArrayList<String>();
+        for (String string : pinyinArrays) {
+            pinyinList.add(string);
+        }
+        return pinyinList;
     }
 
     private static void initSpells() {
@@ -23,10 +29,5 @@ public class PinyinSyncopate {
         for (int i = 0; i < spells.size(); i++) {
             tree.insert(spells.get(i));
         }
-    }
-
-    public static void main(String[] args) {
-        String spell = "nuli";
-        Utils.println(splitSpell(spell));
     }
 }
