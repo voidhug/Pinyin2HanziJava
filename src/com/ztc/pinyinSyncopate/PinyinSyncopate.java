@@ -30,7 +30,6 @@ public class PinyinSyncopate {
             input += c;
 
             if (Arrays.asList(juv).contains(c) && input.length() == 1) {
-                Utils.println("fuck1");
                 return null;
             }
 
@@ -44,17 +43,16 @@ public class PinyinSyncopate {
                     input = input.substring(input.length() - 1, input.length());
                     continue;
                 } else {
-                    Utils.println("fuck2");
                     return null;
                 }
             } else if (Arrays.asList(grn).contains(input.charAt(input.length() - 2) + "")) {
                 if (tree.findInitialWith(input.substring(0, input.length() - 2))) {
                     result.add(input.substring(0, input.length() - 2));
-                    input = input.substring(0, input.length() - 2);
+                    input = input.substring(input.length() - 2, input.length());
                     continue;
                 } else if (tree.findInitialWith(input.substring(0, input.length() - 1))) {
                     result.add(input.substring(0, input.length() - 1));
-                    input = input.substring(0, input.length() - 1);
+                    input = input.substring(input.length() - 1, input.length());
                     continue;
                 }
             } else {
@@ -77,7 +75,9 @@ public class PinyinSyncopate {
     }
 
     public static void main(String[] args) {
-        String str = "maozhuxiwansui";
+        String str = "quni";
+//        str = str.substring(str.length() - 2, str.length());
+//        Utils.println(str);
         if (splitSpell(str) == null) {
             System.out.println("null");
         } else {
