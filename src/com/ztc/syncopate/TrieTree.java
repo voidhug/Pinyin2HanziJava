@@ -1,6 +1,4 @@
-package com.ztc.pinyinSyncopate;
-
-import java.util.Arrays;
+package com.ztc.syncopate;
 
 public class TrieTree {
     private TrieNode root;

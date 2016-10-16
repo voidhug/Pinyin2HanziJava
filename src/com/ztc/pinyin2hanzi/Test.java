@@ -1,8 +1,7 @@
 package com.ztc.pinyin2hanzi;
 
-import com.ztc.pinyinSyncopate.PinyinSyncopate;
+import com.ztc.syncopate.PinyinSyncopate;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Test {

@@ -1,4 +1,4 @@
-package com.ztc.pinyinSyncopate;
+package com.ztc.syncopate;
 
 import com.ztc.Utils;
 
@@ -20,7 +20,7 @@ public class PinyinSyncopate {
                 "t", "n", "l", "g", "k", "h", "j",
                 "q", "x", "r", "z", "c", "s", "y", "w"
         };
-        String[] juv = new String[] {"i","u","v"};
+        String[] iuv = new String[] {"i","u","v"};
         String[] grn = new String[] {"g","r","n"};
 
         String input = "";
@@ -29,7 +29,7 @@ public class PinyinSyncopate {
             String c = spell.charAt(i) + "";
             input += c;
 
-            if (Arrays.asList(juv).contains(c) && input.length() == 1) {
+            if (Arrays.asList(iuv).contains(c) && input.length() == 1) {
                 return null;
             }
 

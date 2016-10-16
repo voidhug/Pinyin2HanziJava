@@ -1,4 +1,4 @@
-package com.ztc.pinyinSyncopate;
+package com.ztc.syncopate;
 
 import java.util.HashMap;
 import java.util.Map;

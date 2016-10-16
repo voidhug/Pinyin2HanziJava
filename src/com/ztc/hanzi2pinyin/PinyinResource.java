@@ -49,14 +49,14 @@ public final class PinyinResource {
     }
 
     protected static Map<String, String> getPinyinResource() {
-        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin_data/pinyin.dict"));
+        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin/data/pinyin.dict"));
     }
 
     protected static Map<String, String> getMutilPinyinResource() {
-        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin_data/mutil_pinyin.dict"));
+        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin/data/mutil_pinyin.dict"));
     }
 
     protected static Map<String, String> getChineseResource() {
-        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin_data/chinese.dict"));
+        return getResource(newClassPathReader("/com/ztc/hanzi2pinyin/data/chinese.dict"));
     }
 }

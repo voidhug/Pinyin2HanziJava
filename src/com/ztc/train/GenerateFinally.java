@@ -258,11 +258,7 @@ public class GenerateFinally {
     }
 
     private static void initDir() {
-        File data_path = new File(DATA_PATH);
-
-        if (!data_path.exists()) {
-            data_path.mkdirs();
-        }
+        Utils.createDir(DATA_PATH);
     }
 
     public static void main(String[] args) {

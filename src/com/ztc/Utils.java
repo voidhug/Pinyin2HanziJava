@@ -1,5 +1,9 @@
 package com.ztc;
 
+import com.ztc.hanzi2pinyin.PinyinException;
+import com.ztc.hanzi2pinyin.PinyinFormat;
+import com.ztc.hanzi2pinyin.PinyinHelper;
+
 import java.io.*;
 import java.util.*;
 
@@ -250,6 +254,20 @@ public class Utils {
         }
     }
 
+    public static void createDir(String dirPath) {
+        File file = new File(dirPath);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+    }
+
     public static void main(String[] args) {
+        String hanzi = "绰绰有余";
+        try {
+            String pinyins = PinyinHelper.convertToPinyinString(hanzi, ",", PinyinFormat.WITHOUT_TONE);
+            print(pinyins);
+        } catch (PinyinException e) {
+            e.printStackTrace();
+        }
     }
 }

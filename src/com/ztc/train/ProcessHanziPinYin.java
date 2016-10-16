@@ -109,14 +109,8 @@ public class ProcessHanziPinYin {
     }
 
     private static void initDir() {
-        File input_path = new File(INPUT_PATH);
-        File output_path = new File(OUTPUT_PATH);
-        if (!input_path.exists()) {
-            input_path.mkdirs();
-        }
-        if (!output_path.exists()) {
-            output_path.mkdirs();
-        }
+        Utils.createDir(INPUT_PATH);
+        Utils.createDir(OUTPUT_PATH);
     }
 
     public static void main(String[] args) {
