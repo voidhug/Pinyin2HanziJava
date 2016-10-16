@@ -82,8 +82,6 @@ public class TextProcessing {
                     builder.append(str);
                     builder.append(" ");
                 }
-                builder.deleteCharAt(builder.length() - 1);
-                builder.append("\n");
                 pinyinList.clear();
             }
             builder.deleteCharAt(builder.length() - 1);
@@ -120,8 +118,6 @@ public class TextProcessing {
                         builder.append(pinyin);
                         builder.append(" ");
                     }
-                    builder.deleteCharAt(builder.length() - 1);
-                    builder.append("\n");
                 } catch (PinyinException e) {
                     e.printStackTrace();
                 }
